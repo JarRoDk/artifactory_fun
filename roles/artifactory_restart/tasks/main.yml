@@ -1,0 +1,8 @@
+- name: Stop a container
+  docker_container:
+    name: nginx
+    state: stopped
+    #  with_items:
+    #    - nginx
+    #    - artifactory
+    #    - postgresql

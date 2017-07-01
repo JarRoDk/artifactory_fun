@@ -1,0 +1,10 @@
+- name: restart configuration
+  uri:
+    url: http://localhost:8081/artifactory/api/system/configuration/webServer
+    method: POST
+    user: admin
+    password: password
+    return_content: yes
+    body: "{{ lookup('file','artifactory_reverseproxy_reconfig.json') }}"
+    body_format: json
+    status_code: 201
